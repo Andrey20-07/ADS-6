@@ -10,7 +10,7 @@ class TPQueue {
  public:
     void push(const T& element) {
       auto ukaz = lists.begin();
-      while (ukaz < lists.end() && ukaz.prior >= element.prior) {
+      while (ukaz != lists.end() && ukaz->prior >= element.prior) {
         ukaz++;
       }
       lists.insert(ukaz, element);
